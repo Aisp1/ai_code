@@ -49,7 +49,7 @@
 import { ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { FolderOpened, Document } from '@element-plus/icons-vue'
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@/api/invoke'
 import { open } from '@tauri-apps/plugin-dialog'
 import { CodeFile } from '../services/dto'
 

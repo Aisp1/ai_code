@@ -33,3 +33,33 @@ pnpm tauri build
 欢迎大家关注我的公众号（飞空之羽的技术手札），我会在上面定期分享一些关于技术的经验和感悟~
 
 ![二维码](https://github.com/davidfantasy/mybatis-plus-generator-ui/blob/master/imgs/wechat.jpg)
+
+
+## Python 后端版本（前端不变）
+
+仓库中新增了 `backend-python` 目录，用于提供与前端 `invoke(...)` 对齐的 Python 后端实现（FastAPI）。
+
+### 启动方式
+
+1. 启动 Python 后端：
+
+```bash
+cd backend-python
+python -m venv .venv
+source .venv/bin/activate  # Windows 使用 .venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app:app --host 127.0.0.1 --port 8000 --reload
+```
+
+2. 在项目根目录启动前端：
+
+```bash
+pnpm install
+VITE_BACKEND_URL=http://127.0.0.1:8000 pnpm dev
+```
+
+### 说明
+
+- 前端程序语言保持为 TypeScript + Vue。
+- 新增了 `src/api/invoke.ts`，将原本 `@tauri-apps/api/core` 的 `invoke` 调用改为 HTTP 调用 Python 后端。
+- Python 后端包含配置、数据源、规则、任务、文件树与文件保存等基础命令；`get_tables` 目前返回空列表，可按你的数据库协议继续扩展。

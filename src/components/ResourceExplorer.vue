@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from 'vue'
-import { invoke } from '@tauri-apps/api/core';
+import { invoke } from '@/api/invoke';
 import { Folder, Document, Search, Refresh, Plus, Delete, Edit, FolderOpened } from '@element-plus/icons-vue'
 import DataSourceForm from '@/components/DataSourceForm.vue'
 import { dataSourceService, type DataSource } from '../services/DataSourceService'
