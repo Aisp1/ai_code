@@ -1,4 +1,4 @@
-import { invoke } from "@tauri-apps/api/core";
+import { invoke } from "@/api/invoke";
 import { ElMessage } from "element-plus";
 
 export interface Rule {
